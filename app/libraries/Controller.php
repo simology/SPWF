@@ -23,8 +23,9 @@ class Controller{
             require '../app/views/layout/' . $this->layout . '.php'; 
 		}
 		// print Views 
-		else{
-            echo $content_for_layout;
+		else {
+            //echo $content_for_layout;
+            return $content_for_layout;
         }
 
     

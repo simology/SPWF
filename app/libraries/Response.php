@@ -18,7 +18,7 @@ class Response extends Router{
   // Send an error response.
   public function onError($statusCode) {
     $this->statusCode($statusCode);
-    $this->body("Error {$statusCode}");
+    $this->write("Error {$statusCode}");
     $this->send();
   }
   // Send the response.
@@ -34,7 +34,7 @@ class Response extends Router{
     exit;
   }
   // Set a response body.
-  public function body($body) {
+  public function write($body) {
     $this->body = $body;
     return $this;
   }

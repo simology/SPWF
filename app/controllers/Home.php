@@ -51,6 +51,14 @@ class Home extends Controller{
             var_dump($cc->getErrors());
         }
     }
+    public function login(Request $request, Response $response, array $params){
+        $body = $this->view('user.login');
+        //$body = 'ol';
+        $response->write($body)->statusCode(404)->cookie('4242', 'simooo')->send();
+        //return $response->header('Location', 'https://www.google.com')->statusCode(302)->send();
+
+
+    }
     public function user(Request $request, Response $response, array $params){
         $this->view('user.login');
     }
