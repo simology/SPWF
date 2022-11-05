@@ -1,0 +1,6 @@
+{
+    "require": {
+        "katzgrau/klogger": "dev-master",
+        "plasticbrain/php-flash-messages": "^1.0"
+    }
+}
