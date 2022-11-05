@@ -9,10 +9,9 @@
 class Core {
     public function __construct(){
         $router = new Router();
-        require_once '../app/config/route.php';
+        require_once CONFIG_DIR . 'route.php';
         $router->run();
-        //var_dump($router->getRoutes());
-
+    
     }
 }
 

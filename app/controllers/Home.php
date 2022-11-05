@@ -2,10 +2,17 @@
 class Home {
 
     public function index(Request $request, Response $response, array $params){
-        echo "Home Page";
-        var_dump($params);
-        $response->cookie('test42', 42);
-        $response->send();
-        var_dump($_COOKIE);
+        echo "ok";
+        $age = 21;
+        $Validator = get('Validator');
+        $cc = $Validator->name('age')->value($age)->min(18)->max(40);
+        //var_dump($cc);
+        if($cc->isSuccess()){
+            echo "Validation ok!";
+        }else{
+            echo "Validation error!";
+            var_dump($cc->getErrors());
+        }
     }
+    
 }
