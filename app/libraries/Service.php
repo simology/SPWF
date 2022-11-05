@@ -1,25 +1,22 @@
 <?php
-echo 'service : '.getcwd().'<br>';
-
-/*
-IoC::register('photo', function() {
-    $photo = new Photo;
-    $photo->setDB('...');
-    $photo->setConfig('...');
- 
-    return $photo;
-});
-
-// Fetch new photo instance with dependencies set
-$photo = IoC::resolve('photo');
-*/
+if(file_exists(LIB_DIR . 'services/composer/vendor/autoload.php')){
+    require LIB_DIR . 'services/composer/vendor/autoload.php';
+}
 
 
+//service list of class :
 IoC::register('Validator', function() {
     $val = new Validation();
     return $val;
 });
 
+//service list of composer
+IoC::register('FM', function() {
+    $msg = new \Plasticbrain\FlashMessages\FlashMessages();
+    return $msg;
+});
+
+//call service from controller by get
 function get($object){
     $instance = IoC::resolve($object);
     if(is_object($instance)){
@@ -29,5 +26,3 @@ function get($object){
         echo "no service registred as this name : " . $object;
     }
 }
-//$Validator = IoC::resolve('Validator');
-

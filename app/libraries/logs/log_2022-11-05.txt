@@ -1,0 +1,44 @@
+[2022-11-05 1:00:06.363667] [info] Returned a million search results
+[2022-11-05 1:00:06.364057] [error] Oh dear.
+[2022-11-05 1:00:06.364126] [debug] Got these users from the Database.
+    0: array(
+        'name' => 'Kenny Katzgrau',
+        'username' => 'katzgrau',
+    )
+    1: array(
+        'name' => 'Dan Horrigan',
+        'username' => 'dhrrgn',
+    )
+[2022-11-05 1:00:07.528877] [info] Returned a million search results
+[2022-11-05 1:00:07.529216] [error] Oh dear.
+[2022-11-05 1:00:07.529297] [debug] Got these users from the Database.
+    0: array(
+        'name' => 'Kenny Katzgrau',
+        'username' => 'katzgrau',
+    )
+    1: array(
+        'name' => 'Dan Horrigan',
+        'username' => 'dhrrgn',
+    )
+[2022-11-05 1:02:04.221733] [info] Returned a million search results
+[2022-11-05 1:02:04.226581] [error] Oh dear.
+[2022-11-05 1:02:04.227029] [debug] Got these users from the Database.
+    0: array(
+        'name' => 'Kenny Katzgrau',
+        'username' => 'katzgrau',
+    )
+    1: array(
+        'name' => 'Dan Horrigan',
+        'username' => 'dhrrgn',
+    )
+[2022-11-05 1:02:36.826205] [info] Returned a million search results
+[2022-11-05 1:02:36.826447] [error] Oh dear.
+[2022-11-05 1:02:36.826524] [debug] Got these users from the Database.
+    0: array(
+        'name' => 'Kenny Katzgrau',
+        'username' => 'katzgrau',
+    )
+    1: array(
+        'name' => 'Dan Horrigan',
+        'username' => 'dhrrgn',
+    )
