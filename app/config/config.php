@@ -11,3 +11,13 @@ define( 'APPROOT' , dirname(__FILE__) );
 
 // Pre-Route
 define( 'URLROOT' , 'http://127.0.0.1/frm' );
+
+//database
+$db = array(
+    'server' => 'localhost',
+    'db_name' => 'elettromutti',
+    'type' => 'mysql',
+    'user' => 'root',
+    'pass' => 'toortoor',
+    'charset' => 'charset=utf8',
+);

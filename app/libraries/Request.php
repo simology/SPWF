@@ -27,8 +27,7 @@ class Request {
   public function __construct() {
     $this->cookies = $_COOKIE;
     $this->post_data = $_POST;
-	$this->get_data = isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : null;
-
+	  $this->get_data = isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : null;
     $this->headers = apache_request_headers();
     $this->ip = $_SERVER['REMOTE_ADDR'];
     $this->http_method = $_SERVER['REQUEST_METHOD'];

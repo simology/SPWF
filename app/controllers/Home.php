@@ -12,8 +12,9 @@ class Home extends Controller{
           <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js'></script>
         </head>
         <body>";
+        echo "here";
         if (!session_id()) @session_start();
-        $age = 21;
+        $age = 201;
         
         $users = [
             [
@@ -25,14 +26,15 @@ class Home extends Controller{
                 'username' => 'dhrrgn',
             ],
         ];
-        $Validator = get('Validator');
-        $msg = get('FM');
+        $Validator = IoC::get('Validator');
+        $msg = IoC::get('FM');
         $msg->info('This is an info message');
         $msg->success('This is a success message');
         $msg->warning('This is a warning message');
         $msg->error('This is an error message');
-        
-        
+        $UserModel = $this->loadModel('Users');
+        //dump($UserModel->getUsers());
+        dump(Auth::isLogged());
         // If you need to check for errors (eg: when validating a form) you can:
         if ($msg->hasErrors()) {
             // There ARE errors
@@ -51,6 +53,7 @@ class Home extends Controller{
             var_dump($cc->getErrors());
         }
     }
+
     public function login(Request $request, Response $response, array $params){
         $body = $this->view('user.login');
         //$body = 'ol';
@@ -59,6 +62,16 @@ class Home extends Controller{
 
 
     }
+
+    public function test($request, $response, $params)
+    {
+        $body = $this->view('test.test');
+        $response->write($body)->send();
+    }
+    public function testlog($request, $response, $params)
+    {
+        dump($params);
+    }    
     public function user(Request $request, Response $response, array $params){
         $this->view('user.login');
     }

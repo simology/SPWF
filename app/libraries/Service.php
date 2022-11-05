@@ -17,12 +17,4 @@ IoC::register('FM', function() {
 });
 
 //call service from controller by get
-function get($object){
-    $instance = IoC::resolve($object);
-    if(is_object($instance)){
-        return $instance;
-    }
-    else{
-        echo "no service registred as this name : " . $object;
-    }
-}
+

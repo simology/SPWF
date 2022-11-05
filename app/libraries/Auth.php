@@ -19,13 +19,10 @@ Class Auth{
         $db = new Database( $db );
 
         $user = $db->select('users')->where(" username like '$username' ")->result();
-        
-        // replaced : password_verify
 
         if( check_password( $password, $user['password'] ) ){
             $_SESSION['Auth']['uid']      = $user['user_id'];
             $_SESSION['Auth']['username'] = $username;
-            //$_SESSION['Auth']['password'] = $password;
             return true;
         }
 
@@ -40,7 +37,6 @@ Class Auth{
         if( !isset( $_SESSION['Auth']['username'] ) or !isset( $_SESSION['Auth']['uid'] )){
             setFlash('Per accedere alla pagina effetua prima accesso', 'warning');
             return false;
-            exit;
         }
         else { 
             return true;

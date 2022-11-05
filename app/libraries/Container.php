@@ -41,4 +41,53 @@ class IoC {
     {
         return array_key_exists($name, static::$registry);
     }
+
+
+    // added by me
+    public static function get($object){
+        $instance = IoC::resolve($object);
+        if(is_object($instance)){
+            return $instance;
+        }
+        else{
+            echo "no service registred as this name : " . $object;
+        }
+    }
 }
+
+
+/*
+//alternative IoC class :
+//
+class IoC {
+    protected $registry = array();
+ 
+    public function __set($name, $resolver)
+    {
+        $this->registry[$name] = $resolver;
+    }
+ 
+    public function __get($name)
+    {
+        return $this->registry[$name]();
+    }
+}
+//
+
+// usage :
+//
+$c = new IoC;
+$c->mailer = function() {
+  $m = new Mailer;
+  // create new instance of mailer
+  // set creds, etc.
+   
+  return $m;
+};
+ 
+// Fetch, boy
+$mailer = $c->mailer; // mailer instance
+
+//
+
+*/

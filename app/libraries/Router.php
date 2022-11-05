@@ -78,7 +78,7 @@ class Router
 
 	public function run()
 	{
-
+		
 		foreach ($this->routes as $route) {
 			$route_regex = $route['regex'];
 
@@ -97,10 +97,12 @@ class Router
 						$request = new Request();
 						$response = new Response();
 						$params = $this->get_request_data($route['method'], $request);
+						
 						if ($route['method'] == 'GET') {
 							$obj->$controller_method($request, $response, $params);
 						}
 						if ($route['method'] == 'POST') {
+							//$params= [1,2,3];
 							$obj->$controller_method($request, $response, $params);
 						}
 					}

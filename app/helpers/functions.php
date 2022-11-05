@@ -113,7 +113,7 @@ function dump($data, $label='', $return = false) {
 //Redirect to URI
 function redirect( $uri ){
     $uri = str_replace('.', '/', $uri);
-    header('Location: ' . URLROOT . $uri);
+    header('Location: ' . URLROOT . '/' . $uri);
     exit();
 }
 
